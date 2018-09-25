@@ -1,8 +1,216 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
 @font-face {
 	font-family: 'Gilmer';
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 700;
 	src: url('../fonts/Gilmer-Bold.woff') format('woff'),
 		url('../fonts/Gilmer-Bold.woff') format('woff2');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Gilmer, sans-serif, Arial;
+	font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: 400;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.wrapper {
+}
+
+.container {
+	max-width: 1200px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0 68px;
+}
+
+.indent {
+	padding-left: 107px;
+}
+
+.header {
+	padding-top: 55px;
+}
+
+.button {
+	position: relative;
+	border: none;
+	height: 58px;
+	padding: 0 34px;
+	box-sizing: border-box;
+	color: #11d8ee;
+	font-size: 13px;
+	font-weight: 700;
+	background-color: #fff;
+	border-radius: 3px;
+	transition: opacity 0.35s ease-out;
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.button:hover {
+	opacity: 0.95;
+	transition: none;
+}
+
+.button:active {
+	opacity: 0.9;
+	outline: none;
+}
+
+.button._icon {
+	display: flex;
+	align-items: center;
+	padding-right: 23px;
+}
+
+.button._icon-bubble {
+}
+
+.button._icon-bubble:after {
+	content: '';
+	display: block;
+	width: 22px;
+	height: 22px;
+	background-image: url('../img/icon-bubble.svg');
+	margin-left: 25px;
+}
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.header__container {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header__logo {
+	position: relative;
+	left: -33px;
+	width: 141px;
+}
+
+.intro {
+	padding-top: 204px;
+	height: 790px;
+	box-sizing: border-box;
+	background: #0edbef url('../img/intro-bg.jpg') center bottom;
+	background-size: cover;
+	color: #fff;
+}
+
+.intro__subtitle {
+	margin-bottom: 10px;
+	font-family: Roboto, sans-serif, Arial;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+.intro__title {
+	font-size: 53px;
+	margin-bottom: 16px;
+}
+
+.intro__featured-text {
+	font-size: 32px;
+	font-family: Roboto, sans-serif, Arial;
+	margin-bottom: 74px;
+}
+
+.intro__featured-text-inner {
+	position: relative;
+}
+
+.intro__featured-text-image {
+	position: absolute;
+	right: -16px;
+	bottom: -15px;
+	width: 70px;
+	vertical-align: bottom;
+	transform: translateX(100%);
+}
+
+.intro__features {
+  margin-bottom: 50px;
+}
+
+.features {
+}
+
+.features__row {
+	display: flex;
+	margin-bottom: 54px;
+}
+
+.features__row:last-child {
+	margin-bottom: 0;
+}
+
+.features__item {
+}
+
+.feature {
+  position: relative;
+	width: 230px;
+	padding-left: 45px;
+	box-sizing: border-box;
+	font-family: Roboto, sans-serif, Arial;
+}
+
+.feature:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-size: cover;
+}
+
+.feature._percent:before {
+  background-image: url("../img/icon-percent.svg");
+  width: 28px;
+  height: 27px;
+}
+
+.feature._gift:before {
+  background-image: url("../img/icon-gift.svg");
+  width: 25px;
+  height: 30px;
+}
+
+.feature._tag:before {
+  background-image: url("../img/icon-tag.svg");
+  width: 36px;
+  height: 42px;
+}
+
+.feature._trash-can:before {
+  background-image: url("../img/icon-trash-can.svg");
+  width: 18px;
+  height: 30px;
 }

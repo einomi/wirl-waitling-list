@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"start": "browser-sync start --server --files \"./*.html,./scripts/*.js,./styles/*.css\" --port 3001"
+		"start": "browser-sync start --server \"src\" --files \"./src/*.html,./src/scripts/*.js,./src/styles/*.css\" --port 3001"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.24.7",

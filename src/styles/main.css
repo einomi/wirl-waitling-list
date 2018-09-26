@@ -40,8 +40,20 @@ h5 {
 	padding: 0 4.72vw;
 }
 
+@media screen and (max-width: 767px) {
+	.container {
+		padding: 0 30px;
+	}
+}
+
 .indent {
 	padding-left: 8.2%;
+}
+
+@media screen and (max-width: 767px) {
+	.indent {
+		padding-left: 0;
+	}
 }
 
 .button {
@@ -85,16 +97,31 @@ h5 {
 	padding-right: 23px;
 }
 
+.button._icon .button__inner:after {
+	content: '';
+	display: block;
+	flex: 0 0 auto;
+}
+
 .button._icon-bubble {
 }
 
 .button._icon-bubble .button__inner:after {
-	content: '';
-	display: block;
 	width: 22px;
 	height: 22px;
 	background-image: url('../img/icon-bubble.svg');
 	margin-left: 25px;
+}
+
+@media screen and (max-width: 1000px) {
+	.button {
+		height: 50px;
+		padding: 0 20px;
+	}
+
+	.button._icon {
+		padding-right: 17px;
+	}
 }
 
 .header {
@@ -121,19 +148,29 @@ h5 {
 
 @media screen and (max-width: 1000px) {
 	.header__logo {
+		width: 125px;
 		left: -0.5vw;
 	}
 }
 
-.header__button {
+@media screen and (max-width: 767px) {
+	.header__logo {
+		top: auto;
+		left: auto;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.header__button {
+		display: none;
+	}
 }
 
 .intro {
 	box-sizing: border-box;
-	background: #0ddcee url('../img/intro-bg.jpg') center bottom;
-	background-size: 1440px auto;
-	background-repeat: no-repeat;
-	color: #fff;
+  background: #0ddcee url('../img/intro-bg.jpg') no-repeat center bottom;
+  background-size: 1440px auto;
+  color: #fff;
 	overflow: hidden;
 }
 
@@ -151,28 +188,16 @@ h5 {
 }
 
 .intro__title {
-  position: relative;
-  left: -0.01em;
+	position: relative;
+	left: -0.01em;
 	font-size: 53px;
 	margin-bottom: 16px;
-}
-
-@media screen and (max-width: 1000px) {
-	.intro__title {
-    font-size: 46px;
-	}
 }
 
 .intro__featured-text {
 	font-size: 32px;
 	font-family: Roboto, sans-serif, Arial;
 	margin-bottom: 2.3125em;
-}
-
-@media screen and (max-width: 1000px) {
-	.intro__featured-text {
-    font-size: 28px;
-	}
 }
 
 .intro__featured-text-inner {
@@ -193,7 +218,7 @@ h5 {
 }
 
 .intro__text {
-	width: 485px;
+	max-width: 485px;
 	margin-bottom: 33px;
 	font-size: 12px;
 	line-height: 1.7;
@@ -201,14 +226,18 @@ h5 {
 }
 
 @keyframes layer-animation1 {
-	30% {
-		transform: rotate(1deg) scale(0.94);
+	40% {
+		transform: rotate(1deg) skew(-4deg, -3deg) scale(0.95);
 	}
+
+  80% {
+    transform: rotate(-1deg) skew(4deg, 3deg) scale(0.95);
+  }
 }
 
 @keyframes layer-animation2 {
-	70% {
-		transform: rotate(-1deg) scale(0.9);
+	60% {
+		transform: rotate(-1deg) skew(3deg, 4deg) scale(0.9);
 	}
 }
 
@@ -242,6 +271,49 @@ h5 {
 	right: -470px;
 	animation-duration: 18s;
 	animation-name: layer-animation2;
+}
+
+@media screen and (max-width: 1000px) {
+	.intro__title {
+		font-size: 46px;
+	}
+
+	.intro__featured-text {
+		font-size: 28px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.intro {
+		background-size: 820px auto;
+	}
+
+	.intro__container {
+		padding-top: 180px;
+		padding-bottom: 70px;
+	}
+
+	.intro__title {
+		font-size: 40px;
+	}
+
+	.intro__featured-text {
+		font-size: 28px;
+	}
+
+	.intro__text {
+		max-width: 60%;
+	}
+
+	.intro__button {
+		width: 220px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.intro__text {
+		max-width: 90%;
+	}
 }
 
 .features {
@@ -301,6 +373,21 @@ h5 {
 	height: 30px;
 }
 
+@media screen and (max-width: 767px) {
+	.features__row {
+		flex-direction: column;
+	}
+
+	.features__row,
+	.features__item {
+		margin-bottom: 40px;
+	}
+
+	.features__item:last-child {
+		margin-bottom: 0;
+	}
+}
+
 .launch-info {
 	padding-top: 75px;
 	padding-bottom: 36px;
@@ -322,20 +409,6 @@ h5 {
 	box-sizing: border-box;
 	background-image: url('../img/pink.png');
 	background-size: cover;
-}
-
-@media screen and (max-width: 1180px) {
-	.launch-info__container:before {
-		width: 487px;
-		height: 460px;
-		transform: translate(70%, -30%);
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	.launch-info__container:before {
-		display: none;
-	}
 }
 
 .launch-info__title {
@@ -375,4 +448,59 @@ h5 {
 	text-align: center;
 	font-size: 30px;
 	color: #a0a0a0;
+}
+
+@media screen and (max-width: 1180px) {
+	.launch-info__container:before {
+		width: 487px;
+		height: 460px;
+		transform: translate(70%, -30%);
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.launch-info__container:before {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.launch-info {
+		padding-top: 60px;
+		padding-bottom: 50px;
+	}
+
+	.launch-info__title {
+		max-width: 95%;
+		font-size: 20px;
+		margin-bottom: 52px;
+	}
+
+	.launch-info__logos {
+		flex-direction: column;
+	}
+
+	.launch-info__logo {
+		margin-bottom: 40px;
+	}
+
+	.launch-info__logo:last-child {
+		margin-bottom: 0;
+	}
+
+	.launch-info__logo._exchange {
+		width: 75px;
+	}
+
+	.launch-info__logo._euroventure {
+		width: 186px;
+	}
+
+	.launch-info__logo._trinity {
+		width: 105px;
+	}
+
+	.launch-info__text {
+		font-size: 24px;
+	}
 }
